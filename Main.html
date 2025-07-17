@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>COFFEE HUB</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body class="bg-blue-100">
+  
+  <!-- Navigation Bar -->
+  <nav class="bg-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <span class="text-xl font-bold text-black-600 flex items-center space-x-1">
+            <span>CAFE COFFEE DAY - COFFEE HUB</span>
+          </span>
+        </div>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8 items-center">
+          <a href="Poke.html" class="flex items-center text-gray-700 hover:text-blue-500 space-x-1">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </a>
+          <a href="FavCoffee.html" class="flex items-center text-gray-700 hover:text-blue-500 space-x-1">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+            <span>Favourite Coffee</span>
+          </a>
+          <a href="GeoLoc.html" class="flex items-center text-gray-700 hover:text-blue-500 space-x-1">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Location</span>
+          </a>
+        </div>
+        <!-- Mobile Hamburger Button -->
+        <div class="flex items-center md:hidden">
+          <button id="menu-toggle" class="text-gray-500 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-1 pb-4">
+      <a href="Poke.html" class="block px-3 py-2 text-gray-700 hover:text-blue-500">Home</a>
+      <a href="#" class="block px-3 py-2 text-gray-700 hover:text-blue-500">Favourite Coffee</a>
+      <a href="#" class="block px-3 py-2 text-gray-700 hover:text-blue-500">Location</a>
+    </div>
+
+      </div>
+    </div>
+    
+  </nav>
+  <section class="relative bg-cover bg-center h-[400px] md:h-[500px]" style="background-image: url('l.jpeg');">
+  <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white px-4">
+    <h1 class="text-4xl md:text-6xl font-bold mb-4">Discover New Coffee Options</h1>
+    <p class="text-lg md:text-xl mb-6">Your next TASTE awaits.</p>
+    <a href="Coffee.html" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded shadow-lg transition duration-300">
+      Explore our Various Coffees
+    </a>
+  </div>
+</section>
+<section class="max-w-6xl mx-auto my-12 px-4">
+  <h2 class="text-2xl font-bold mb-6 text-center">Our Branches</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    
+    <!-- Card 1 -->
+    <div class="bg-white rounded shadow p-4">
+      <img src="m.jpeg" alt="City" class="rounded mb-3 w-full h-48 object-cover">
+      <h3 class="text-xl font-semibold mb-2">Sun Burn Coffee</h3>
+      <p class="text-gray-600">Delhi</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="bg-white rounded shadow p-4">
+      <img src="s.jpeg" alt="City" class="rounded mb-3 w-full h-48 object-cover">
+      <h3 class="text-xl font-semibold mb-2">Star Coffee</h3>
+      <p class="text-gray-600">Mumbai</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="bg-white rounded shadow p-4">
+      <img src="kk.jpeg" alt="City" class="rounded mb-3 w-full h-48 object-cover">
+      <h3 class="text-xl font-semibold mb-2">Mattea Coffee</h3>
+      <p class="text-gray-600">Delhi</p>
+    </div>
+    
+  </div>
+</section>
+<section class="max-w-4xl mx-auto my-8 px-4">
+  <h2 class="text-2xl font-bold mb-4">Watch our Coffee Journey so far</h2>
+  <div class="aspect-w-16 aspect-h-9">
+    <video width="640" controls>
+      <source src="Set2 Video.mp4" type="video/mp4">
+      <track src="/subtitles.vtt" kind="subtitles" srclang="en" label="English Subtitles" default>
+      Your browser does not support the video tag.
+    </video>
+
+  </div>
+</section>
+<section class="max-w-3xl mx-auto my-8 px-4">
+  <h2 class="text-2xl font-bold mb-4">Relaxing Background Music</h2>
+  <p class="mb-2 text-gray-700">Enjoy some calm instrumental music while you explore.</p>
+  <audio controls class="w-full">
+    <source src="Set2 Audio.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</section>
+
+
+
+
+<footer class="bg-gray-800 text-white py-6 mt-12">
+  <div class="max-w-4xl mx-auto flex flex-col items-center space-y-2">
+    <!-- SVG Location Pin -->
+    <svg
+      class="w-8 h-8 text-blue-400"
+      fill="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path d="M12 2C8 2 5 5 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
+    </svg>
+    <p>Explore the world of Coffee with us!</p>
+    <p class="text-sm text-gray-400">&copy; 2025 Coffee Explorer</p>
+  </div>
+</footer>
+
+
+
+
+  <!-- Script for toggle -->
+  <script>
+    const menuButton = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+
+</body>
+</html>

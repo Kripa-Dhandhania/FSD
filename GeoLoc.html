@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coffee Shop Location</title>
+</head>
+<body>
+  <h2>Find My Location</h2>
+  <button onclick="getLocation()">Get Location</button>
+  <p id="output"></p>
+
+  <script>
+    function getLocation() {
+      const output = document.getElementById("output");
+
+      if (!navigator.geolocation) {
+        output.innerText = "Geolocation is not supported by your browser.";
+        return;
+      }
+
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          output.innerText = `Latitude: ${latitude}°, Longitude: ${longitude}°`;
+        },
+        (error) => {
+          output.innerText = `Error: ${error.message}`;
+        }
+      );
+    }
+  </script>
+</body>
+</html>

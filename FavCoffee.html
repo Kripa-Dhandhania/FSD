@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Storage</title>
+  <style>
+    body { 
+      font-family: Arial, sans-serif; 
+      padding: 2rem; 
+      background-color: rgb(123, 189, 205); 
+    }
+    input, button { 
+      padding: 0.5rem; 
+      margin: 0.5rem 0; 
+    }
+    #output { 
+      margin-top: 1rem; 
+      font-weight: bold; 
+    }
+    #sane:hover {
+      background-color: #ce5656;
+    }
+    #yes:hover {
+      background-color: #ce5656;
+    }
+    input:focus {
+      outline: none;
+      border: 2px solid #ce5656;
+      background-color: #fff8f8;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Give us your Favourite Coffee Details</h2><br>
+
+  <label>Enter your name:</label><br>
+  <input type="text" id="nameInput" placeholder="Your name"><br>
+
+  <label>Enter your email:</label><br>
+  <input type="email" id="emailInput" placeholder="Your email"><br>
+
+  <label>Enter the Name of the Coffee:</label><br>
+  <input type="text" id="coff" placeholder="Your Coffee"><br>
+
+  <button onclick="saveName()" id="sane">Save Name</button>
+  <button onclick="getName()" id="yes">Get Name</button>
+
+  <div id="output"></div>
+
+  <script>
+    function isValidEmail(email) {
+      // Simple regex for email validation
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
+    }
+
+    function saveName() {
+      const name = document.getElementById('nameInput').value.trim();
+      const email = document.getElementById('emailInput').value.trim();
+      const coffee = document.getElementById('coff').value.trim();
+
+      const output = document.getElementById('output');
+
+      if (!name || !email || !coffee) {
+        output.textContent = '❌ Please fill in all the fields.';
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        output.textContent = '❌ Please enter a valid email address.';
+        return;
+      }
+
+      // Save to localStorage
+      localStorage.setItem('username', name);
+      localStorage.setItem('useremail', email);
+      localStorage.setItem('Coffee', coffee);
+
+      output.textContent = '✅ Details saved successfully!';
+    }
+
+    function getName() {
+      const savedName = localStorage.getItem('username');
+      const savedCoffee = localStorage.getItem('Coffee');
+
+      if (savedName && savedCoffee) {
+        document.getElementById('output').textContent = `☕ Hello, ${savedName}! You love ${savedCoffee}.`;
+      } else {
+        document.getElementById('output').textContent = '⚠️ Please enter and save all details first.';
+      }
+    }
+  </script>
+
+</body>
+</html>
